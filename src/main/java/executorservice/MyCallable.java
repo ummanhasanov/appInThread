@@ -4,32 +4,35 @@
  */
 package executorservice;
 
+import java.util.concurrent.Callable;
+
 /**
  *
  * @author Umman Hasan
  */
-public class MyRunnable implements Runnable
+public class MyCallable implements Callable<Object>
 {
 
     private int index;
 
-    public MyRunnable(int index) {
+    public MyCallable(int index) {
         this.index = index;
     }
 
     @Override
-    public void run() {
+    public Object call() throws Exception {
         doIt();
+        return this;
     }
 
     public void doIt() {
-        System.out.println(index + ".runnable started and will wait 3 seconds");
+        System.out.println(index + ".callable started and will wait 3 seconds");
         try {
             Thread.sleep(3000);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
-        System.out.println("Runnable finished");
+        System.out.println("Callable finished");
     }
 
 }

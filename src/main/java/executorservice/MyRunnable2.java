@@ -8,12 +8,12 @@ package executorservice;
  *
  * @author Umman Hasan
  */
-public class MyRunnable implements Runnable
+public class MyRunnable2 implements Runnable
 {
 
     private int index;
 
-    public MyRunnable(int index) {
+    public MyRunnable2(int index) {
         this.index = index;
     }
 
